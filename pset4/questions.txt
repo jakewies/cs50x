@@ -1,0 +1,106 @@
+0. How many different colors does each format support?
+
+    -BMP supports 32-bit color, close to 4 million colors.
+    -GIF supports 8-bit color, up to 256 different colors.
+    -JPEG supports 24-bits of color depth or 16.7 million colors.
+    -PNG supports 8-bit color up 24-bit color giving close to 16 million
+    -different colors.
+
+1. Which format supports animation?
+
+    -GIF
+
+2. What's the difference betwee lossy and lossless compression?
+
+    -Lossy compression eliminates unnecessary information to make the
+    file smaller.
+
+    -Lossless compression is a process that will allow you to recreate the original
+    file as it was exactly. All of the file's data is broken up into small chunks
+    that can be put back together again.
+
+3.  Which of these formats is lossly compressed?
+
+    -JPEG
+
+4.  What happens, technically speaking, when a file is deleted on a FAT file system?
+
+    -Two things happen when a file is deleted on a FAT file system. The first character in the file's directory
+    is modified by the system. This signals that the file has been deleted. Second, the FAT clusters of the file are
+    moved to the hard drive's free cluster list. The actual file is left alone, and thus, doesn't actually delete
+    the file.
+
+5.  What can someone like you do to ensure (with high probability) that files you delete cannot be recovered?
+
+    -Educate myself on the proper techniques to sanitize disk drives, and use a technique such as overwriting data with a
+    few passes of random data will usually make those deleted files irrecoverable.
+
+6.  What’s <stdint.h>?
+
+    -The header stdint.h declares sets of integer types having specified widths.
+
+7.  What’s the point of using <uint8_t>, <uint32_t>, <int32_t>, and <uint16_t> in a program?
+
+    - These are exact-width integer types that designate either a signed or unsigned (notice the u) integer type
+    with a width designated by size N bits.
+
+    example: uintN_t -> an unsigned integer type with width size N bits.
+             intN_t -> a signed integer type with width size N bits.
+
+8.  How many bytes is a BYTE, a DWORD, a LONG, and a WORD, respectively? (Assume a 32-bit architecture like the CS50 Appliance.).
+
+    - BYTE: 1 byte
+    - DWORD: 4 bytes
+    - LONG: 4 bytes
+    - WORD: 2 bytes
+
+9.  What (in ASCII, decimal, or hexadecimal) must the first two bytes of any BMP file be? (Leading bytes used to
+    identify file formats (with high probability) are generally called "magic numbers.)"
+
+    - The first 2 bytes of any BMP file must be the character "B" then the character "M" in ASCII.
+
+10. What’s the difference between <bfSize> and <biSize>?
+
+    - <bfSize> is the size, in bytes, of a bitmap file. <biSize> specifies the number of bytes required by the structure.
+
+11. What does it mean if <biHeight> is negative?
+
+    - <biHeight> specifies the height, in pixels, of a bitmap. If <biHeight> is negative, the bitmap is a top-down DIB, or device-independent bitmap,
+    with its origin in the upper-left corner. NOTE: Top-down DIBs cannot be compressed.
+
+12. What field in BITMAPINFOHEADER specifies the BMP’s color depth (i.e., bits per pixel)?
+
+    - The <biBitCount> specifies the number of bits per pixel. It defines the max number of colors in the bitmap.
+
+13. Why might <fopen> return NULL in copy.c:37?
+
+    - There may be a few reasons why <fopen> would return NULL in line 37 of copy.c. Since the program reaches line 37, there
+    seems to be 2 command-line arguments, and since you are writing to a file in line 37, if the file doesn't already exist
+    the program will create the file and store it in the current working directory. If the computer cannot
+    allocate enough memory to create the desired file, NULL would be returned. Also, there may be a permissions error when
+    trying to write to an open file, or you may not have access to that file.
+
+14. Why is the third argument to fread always 1 in our code?
+
+    - The third argument in fread is the count argument, which holds the maximum number of items to be read. In the comments above copy.c,
+    it states that the program will read a BMP 'piece by piece', hence the 1.
+
+15. What value does <copy.c:70> assign <padding> if <bi.biWidth> is 3?
+
+    - <copy.c:70> would assign <padding> a value of 3 if <bi.biWidth> is 3.
+    This is because the size of RGBTRIPLE = 3, and 3 * 3 = 9 --> 9 % 4 = 1 --> 4 - 1 = 3 --> 3 % 4 = 3.
+    // int padding = (4 - (3 * 3 % 4) % 4;
+    // int padding = 3;
+
+16. What does <fseek> do?
+
+    - <fseek> moves a file pointer to specified location. In copy.c's case, it skips over the padding int and
+    looks for next RGBTRIPLE to read.
+
+17. What is SEEK_CUR?
+
+    - A constant that specifies the current position of the file pointer.
+
+18. Whodunit?
+
+    - Rob Bowden and his cat!
