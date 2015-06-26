@@ -5,6 +5,6 @@ The course is mainly taught in C, therefore my intial commits for early psets wi
 
 The code may contain frequent comments. These are purely for educational purposes and will hopefully help others understand how to tackle the spec.
 
-Certain conventions are used at the beginning of this course. One such convention that I will point out is the use of the 'string'
+Certain conventions are used at the beginning of this course. One such convention that I will point out is the use of the 'string' data type
 
-data type being used instead of the 'char*' data type. You will only see 'string' being used in psets 1-3. The class is then directed to use 'char*'.
+being used instead of the 'char*' data type. You will only see 'string' being used in psets 1-3. The class is then directed to use 'char*'.
