@@ -1,0 +1,69 @@
+/**
+ * styles.css
+ *
+ * Computer Science 50
+ * Problem Set 7
+ *
+ * Global CSS.
+ */
+
+.container {
+    /* center contents */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#middle .form-control {
+    /* center form controls */
+    display: inline-block;
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+#middle .nav {
+    display: inline-block;
+}
+
+#bottom {
+    /* shrink bottom's font size */
+    font-size: smaller;
+
+    /* surround with whitespace */
+    margin: 20px;
+}
+
+#quote {
+    list-style-type: none;
+    border-top: 1px solid black;
+}
+
+#quote li {
+    display: inline;
+    padding: 20px;
+}
+
+
+table {
+    width: 100%;
+}
+
+
+#portfolio td {
+    padding: 5px 5px;
+    text-align: left;
+}
+
+#cash {
+    border-bottom: 2px solid #626262;
+    background-color: #FFFFFF;
+}
+
+#history {
+    text-align: left;
+    border-bottom: 2px solid #626262;
+}
+
+input[type='radio'] {
+  width: 20px;
+ }
